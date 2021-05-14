@@ -52,6 +52,9 @@ function App() {
             setWords([...words, word]);
             event.target[0].value = "";
             setError(0);
+          } else {
+            setError(1);
+            event.target[0].value = "";
           }
         }
       });
@@ -70,8 +73,8 @@ function App() {
         <section>
           <h3 className="font-bold text-2xl">How many words do you know?</h3>
           <p className="text-gray-600 pt-2">
-            This game is simple, you need type as much words as you know within
-            a minute.
+            This game is simple, you need to type as much words as you know
+            within a minute.
           </p>
         </section>
 
@@ -178,7 +181,7 @@ function App() {
           </div>
           {gameState == 1 && (
             <form autocomplete="off" onSubmit={submitWord}>
-              <div className="mb-3 pt-3 rounded bg-gray-200">
+              <div className="mb-3 pt-3 rounded bg-gray-200 relative">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2 ml-3"
                   htmlFor="word"
@@ -192,6 +195,19 @@ function App() {
                     error ? "border-red-600" : "border-purple-600"
                   }  px-3 pb-3`}
                 />
+                <button
+                  type="submit"
+                  className="absolute inset-y-0 -bottom-4 right-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 transform rotate-90"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                  </svg>
+                </button>
               </div>
             </form>
           )}
