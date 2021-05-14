@@ -195,13 +195,10 @@ function App() {
                     error ? "border-red-600" : "border-purple-600"
                   }  px-3 pb-3`}
                 />
-                <button
-                  type="submit"
-                  className="absolute inset-y-0 -bottom-4 right-2"
-                >
+                <button type="submit" className="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 transform rotate-90"
+                    className="h-6 w-6 transform rotate-90 absolute bottom-4 right-2"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
