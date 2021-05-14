@@ -1,0 +1,4 @@
+[build]
+  command = "npm build && npm export"
+  publish = "build"
+
